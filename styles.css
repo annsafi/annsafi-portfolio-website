@@ -1,0 +1,177 @@
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d0d; /* Darker black background color */
+    color: #fff; /* White text color */
+}
+
+nav {
+    background-color: #131313;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #a6a6a6;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 0;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Fun Navigation Underline Effect */
+nav a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffcc00;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/* Menu Toggle Button Styles */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: #ffcc00;
+    font-size: 18px;
+}
+
+/* Responsive Styles for Menu */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        background-color: #121212;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 60px;
+        left: 0;
+        padding: 20px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 15px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Fun Animation for Menu Toggle */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+section {
+    padding: 80px 20px 20px 20px; /* Adjusted padding for better readability */
+}
+
+h1, h2, h3 {
+    color: #ffcc00; /* Neon yellow for headings */
+}
+
+/* Project Card Styling */
+.project-card {
+    background-color: #1f1f1f; /* Darker background for project cards */
+    border: 1px solid #292929; /* Slightly lighter border */
+    padding: 20px;
+    margin: 20px;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect on Project Cards */
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Styling */
+#contact-form input,
+#contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #292929;
+    border-radius: 8px;
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+#contact-form button {
+    background-color: #ffcc00;
+    color: #121212;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#contact-form button:hover {
+    background-color: #ff9900; /* Darker neon yellow on hover */
+}
+
+/* Social Links Styling */
+.social-links a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 24px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    color: #ff9900; /* Darker neon yellow on hover */
+}
+
+/* Fun Elements - Customize as needed */
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+}

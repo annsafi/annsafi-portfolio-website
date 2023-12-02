@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Name - Portfolio</title>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">Menu</div>
+        <ul>
+            <li><a href="#home" onmouseover="playPopSound()">Home</a></li>
+            <li><a href="#about" onmouseover="playPopSound()">About</a></li>
+            <li><a href="#projects" onmouseover="playPopSound()">Projects</a></li>
+            <li><a href="#contact" onmouseover="playPopSound()">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Nur Aina Safiah</h1>
+        <p>Welcome to my portfolio website. I'm an aspiring Data Analyst based in Penang, Malaysia.</p>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="profile.jpg" alt="Nur Aina Safiah Binti Mohamad Jamili">
+        <p>Hi there! I'm Aina, a 2nd-year IT student at the University Sultan Zainal Abidin. I'm passionate about using my tech skills in programming, networking, graphic design, and more. I've even worked on cool projects like GUI Object-Oriented Programming and Mascot creation using Adobe Illustrator for Art and Design. I'm aiming to specialize in data analysis using tools like Phyton, SQL, Excel, and Power BI. I'm excited to learn and collaborate for a data-powered future. Let's connect and explore IT together!</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <!-- Project 1 -->
+        <div class="project-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)">
+            <h3>Project 1</h3>
+            <p>Brief description of Project 1.</p>
+            <img src="project1.jpg" alt="Project 1">
+            <p>Technologies used: HTML, CSS, JavaScript</p>
+            <a href="#" target="_blank">View Project</a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)">
+            <!-- Project 2 content goes here -->
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)">
+            <!-- Project 3 content goes here -->
+        </div>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <!-- Form fields go here -->
+        </form>
+        <div class="social-links">
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">GitHub</a>
+            <!-- Add more social media links as needed -->
+        </div>
+    </section>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        function addHoverEffect(element) {
+            element.style.transform = "scale(1.1)";
+        }
+
+        function removeHoverEffect(element) {
+            element.style.transform = "scale(1)";
+        }
+
+        // JavaScript for form validation (you can enhance this based on your needs)
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            // Add form validation logic here if needed
+            // Example: Check if the fields are not empty
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill out all fields.");
+                event.preventDefault();
+            }
+        });
+
+        // JavaScript for pop sound on hover
+        function playPopSound() {
+            // You can replace 'pop-sound.mp3' with the actual path to your sound file
+            const popSound = new Audio('pop-sound.mp3');
+            popSound.play();
+        }
+
+        // JavaScript for toggling the menu on smaller screens
+        function toggleMenu() {
+            var menu = document.querySelector('nav ul');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
